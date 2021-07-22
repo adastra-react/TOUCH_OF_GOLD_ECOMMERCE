@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/Home.css';
 import Header from './Header';
+import Footer from './Footer';
 import supportImg_1 from '../assets/img/support-1.png'
 import supportImg_2 from '../assets/img/support-2.png'
 import supportImg_3 from '../assets/img/support-3.png'
 import supportImg_4 from '../assets/img/support-4.png'
-import ProductGridListSingle from '../components/ProductGridListSingle'
+import ProductGridListSingle from './ProductGridListSingle'
 import Slider from "react-slick";
 import SimpleImageSlider from "react-simple-image-slider";
 
-function Home({ products }) {
+function Home({ products, handleAddToCart, totalItems }) {
+
+    // if (!products.length) return <p>Loading...</p>;
     console.log(products)
 
     return (
         <div className="home">
-            <p>header</p>
+            <Header totalItems={totalItems} />
             <div className="home_container">
                 <div className="home_slider">
                     <div className="home_text_cont">
@@ -76,15 +79,16 @@ function Home({ products }) {
                                 return(
                                     <ProductGridListSingle
                                         product={product}
+                                        handleAddToCart={handleAddToCart}
+                                        key={product.id}
                                     />
                                 )
-                                // <p></p>
                             })}
                             </div>
                     </div>
                 </div>
             </div>
-            <p>footer</p>
+            {/* <Footer/> */}
         </div>
     )
 }

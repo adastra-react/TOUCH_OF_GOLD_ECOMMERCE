@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import '../Styles/ProductGridListSingle.css'
+import '../Styles/ProductGridListSingle.css';
 
-function ProductGridListSingle({ product }) {
+function ProductGridListSingle({ product, handleAddToCart }) {
 
     console.log(product)
 
@@ -16,7 +16,9 @@ function ProductGridListSingle({ product }) {
             <h5>${product.price.formatted_with_code}</h5>
           </div>
           <div className="add_to_card_cont">
-              <button className="add_to_card_btn">ADD TO CART</button>
+              <button onClick={() => {
+                handleAddToCart(product.id, 1)
+              }} className="add_to_card_btn">ADD TO CART</button>
           </div>
         </div>
        </Fragment>
