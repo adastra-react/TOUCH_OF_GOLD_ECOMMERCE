@@ -30,7 +30,7 @@ function App() {
 
       setCart(item.cart);
 
-      // console.log(cart)
+      console.log(cart)
   }
 
   useEffect(() => {
@@ -50,13 +50,13 @@ function App() {
                 <Home totalItems={cart.total_items} handleAddToCart={handleAddToCart} products={products} />
           </Route>
           <Route  path="/cart" >
-                <Cart cart={cart} />
+                <Cart cart={cart} totalItems={cart.total_items} />
             </Route>
             <Route path="/contact" >
-                <Contact />
+                <Contact totalItems={cart.total_items} />
             </Route>
             <Route path="/shop" >
-                <Shop />
+                <Shop totalItems={cart.total_items} />
             </Route>
           {/* <Route path="/" component={Home} props={products} /> */}
         </Switch>

@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import Header from '../components/Header';
+import { Link } from 'react-router-dom';
 
-function Shop() {
+function Shop({ totalItems }) {
     return (
         <div>
-            shop
+            <Header totalItems={totalItems} />
+            <div>
+                <div className="comp_rout_indicator" >
+                        <p> <Link className="header_nav_link" to="/" >Home</Link> / Shop</p>
+                </div>
+            </div>
         </div>
     )
 }

@@ -1,13 +1,25 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import '../Styles/Header.css'
+import '../Styles/Header.css';
+import { withStyles } from "@material-ui/core/styles";
 import { IconButton, Badge } from '@material-ui/core'
-import Logo from '../assets/img/test_logo.png';
+import Logo from '../assets/svg/Touch of Gold - Image-based.svg';
 import heartIcon from '../assets/svg/heart.svg';
 import bagIcon from '../assets/svg/shopping-bag.svg';
 import userIcon from '../assets/svg/user.svg';
 
+const styles = theme => ({
+    margin: {
+      margin: theme.spacing.unit * 2
+    },
+    customBadge: {
+      backgroundColor: "#00AFD7",
+      color: "white"
+    }
+  });
+
 function Header({ totalItems }) {
+    
     return (
         <div className="head_header">
             <div className="header_cont">
@@ -30,8 +42,8 @@ function Header({ totalItems }) {
                     <img className="header_cart_icons" src={heartIcon} alt="" />
                     <Link to="/cart">
                         <IconButton>
-                            <Badge badgeContent={totalItems} color="secondary">
-                                <img className="header_cart_icons" src={bagIcon} alt="" color="#fff" />
+                            <Badge badgeContent={totalItems} showZero={false} color="secondary">
+                                <img className="header_cart_icons" src={bagIcon} alt="" color="default" />
                             </Badge>
                         </IconButton>
                     </Link>

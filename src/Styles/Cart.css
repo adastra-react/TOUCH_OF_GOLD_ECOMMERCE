@@ -1,0 +1,7 @@
+.comp_rout_indicator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98px;
+    background-color: #F7F7F7;
+}
