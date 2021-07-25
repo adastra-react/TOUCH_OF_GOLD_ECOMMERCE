@@ -11,7 +11,7 @@
 }
 
 .action_buttons{
-    padding: 0 60px;
+    padding: 0 200px;
     height: 200px;
     flex-direction: row;
     align-items: center;
@@ -20,7 +20,7 @@
     justify-content: space-between;
 }
 
-.action_buttons > button{
+.action_btn{
     height: 50px;
     width: 250px;
     border-radius: 50px;
@@ -28,7 +28,7 @@
     transition: ease-in-out 300ms;
 }
 
-.action_buttons > button:hover{
+.action_btn:hover{
     background-color: #a749ff;
     color: #fff;
 }
@@ -40,11 +40,11 @@
 }
 
 .cart_checkout_box{
-    padding: 0 60px;
+    padding: 0 200px;
 }
 
 .cart_subtotal{
-    padding: 60px;
+    padding:60px 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -68,7 +68,7 @@
 }
 
 .checkout_btn:hover{
-    background-color: #000;
+    background-color: #;
     color: #fff;
 }
 

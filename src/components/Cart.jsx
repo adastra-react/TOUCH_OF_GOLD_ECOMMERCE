@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import '../Styles/Cart.css';
 import { Grid } from '@material-ui/core'
 import CartItem from './CartItem';
+import { ToastContainer, toast } from 'material-react-toastify';
+import 'material-react-toastify/dist/ReactToastify.css';
 
 
-function Cart({ cart, totalItems }) {
+function Cart({ cart, totalItems, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) {
 
     const EmptyCart = () => (
         <div>
@@ -15,6 +17,8 @@ function Cart({ cart, totalItems }) {
     )
 
     console.log(cart)
+
+    const clearCartToast = () => toast.warning("Shopping cart cleared!")
 
     const FilledCart = () => {
         return(
@@ -25,14 +29,24 @@ function Cart({ cart, totalItems }) {
            <div className="grid_list">
                 {cart.line_items.map((item) => {
                     return(
-                        <CartItem item={item} />
+                        <CartItem
+                            handleUpdateCartQty={handleUpdateCartQty}
+                            handleRemoveFromCart={handleRemoveFromCart}
+                            handleEmptyCart={handleEmptyCart}
+                            item={item} />
                     )
                 })}
             </div>
             <div className="cart_checkout_section"> 
                 <div className="action_buttons" >
-                    <button>CONTINUE SHOPPING</button>
-                    <button>CLEAR SHOPPING CART</button>
+                    <Link to="/">
+                        <button className="action_btn" >CONTINUE SHOPPING</button>
+                    </Link>
+                   
+                    <button className="action_btn" onClick={() => {
+                        handleEmptyCart()
+                        clearCartToast()
+                    }} >CLEAR SHOPPING CART</button>
                 </div>
                 <div className="cart_checkout_box">
                     <div className="cart_subtotal">
@@ -43,11 +57,12 @@ function Cart({ cart, totalItems }) {
                             </div>
                             <div>
                                 <p>Total products</p>
-                                <p>Total products</p>
+                                <p>{cart.total_items} : {cart.subtotal.formatted_with_symbol}</p>
+                               
                             </div>
                             <div>
                                 <h3 className="grand_total" >Grand Total</h3>
-                                <h3 className="grand_total" >Grand Total</h3>
+                                <h3 className="grand_total" >{cart.subtotal.formatted_with_symbol}</h3>
                             </div>
                         </div>
                         <button className="checkout_btn" >PROCEED TO CHECKOUT</button>
@@ -71,6 +86,17 @@ function Cart({ cart, totalItems }) {
                     <p> <Link className="header_nav_link" to="/" >Home</Link> / Cart</p>
                 </div>
                 {cart.total_items.length !== 0 ?  <FilledCart/> : <EmptyCart/>}
+                <ToastContainer
+                                position="bottom-left"
+                                autoClose={3000}
+                                hideProgressBar
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                                 />
            </div>
         </div>
     )

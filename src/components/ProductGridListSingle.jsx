@@ -1,9 +1,14 @@
 import React, { Fragment } from 'react';
 import '../Styles/ProductGridListSingle.css';
+import { ToastContainer, toast } from 'material-react-toastify';
+import 'material-react-toastify/dist/ReactToastify.css';
 
 function ProductGridListSingle({ product, handleAddToCart }) {
 
-    console.log(product)
+    console.log(product);
+
+    const AddToCartToast = () => toast.dark(`${product.name} added to cart!`)
+
 
     return (
         <Fragment>
@@ -17,9 +22,21 @@ function ProductGridListSingle({ product, handleAddToCart }) {
           </div>
           <div className="add_to_card_cont">
               <button onClick={() => {
-                handleAddToCart(product.id, 1)
+                handleAddToCart(product.id, 1);
+                AddToCartToast();
               }} className="add_to_card_btn">ADD TO CART</button>
           </div>
+          <ToastContainer
+                                position="bottom-left"
+                                autoClose={3000}
+                                hideProgressBar
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                                 />
         </div>
        </Fragment>
     )

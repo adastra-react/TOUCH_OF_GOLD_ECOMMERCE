@@ -26,6 +26,15 @@
       width: 100px;
   }
 
-  /* .cart_card > {
+ .quantity_btn{
+     padding: 5px 60px;
+     border: none;
+     border-radius: 2px;
+     background-color: #000;
+     color: #fff;
+     transition: ease-in-out 300ms;
+ }
 
-  } */
+ .quantity_btn:hover{
+     background-color: #a749ff;
+ }
