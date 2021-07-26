@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/Home.css';
 import Header from './Header';
-import Footer from './Footer';
+// import Footer from './FooterFeet';
 import supportImg_1 from '../assets/img/support-1.png'
 import supportImg_2 from '../assets/img/support-2.png'
 import supportImg_3 from '../assets/img/support-3.png'

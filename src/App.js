@@ -3,9 +3,11 @@ import { commerce } from './lib/commerce';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
+// import Footer from './components/FooterFeet';
 import Cart from './components/Cart';
 import Contact from './components/Contact';
 import Shop from './components/Shop';
+import Checkout from './components/Checkout';
 
 function App() {
 
@@ -78,6 +80,15 @@ function App() {
                    totalItems={cart.total_items} 
                   />
             </Route>
+            <Route  path="/checkout" >
+                <Checkout
+                   handleUpdateCartQty={handleUpdateCartQty} 
+                   handleRemoveFromCart={handleRemoveFromCart} 
+                   handleEmptyCart={handleEmptyCart} 
+                   cart={cart} 
+                   totalItems={cart.total_items} 
+                  />
+            </Route>
             <Route path="/contact" >
                 <Contact totalItems={cart.total_items} />
             </Route>
@@ -91,6 +102,9 @@ function App() {
           {/* <Route path="/" component={Home} props={products} /> */}
         </Switch>
       </Router>
+      <div>
+        {/* <Footer/> */}
+      </div>
     </div>
   );
 }

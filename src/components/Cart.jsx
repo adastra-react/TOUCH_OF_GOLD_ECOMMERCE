@@ -65,7 +65,9 @@ function Cart({ cart, totalItems, handleUpdateCartQty, handleRemoveFromCart, han
                                 <h3 className="grand_total" >{cart.subtotal.formatted_with_symbol}</h3>
                             </div>
                         </div>
-                        <button className="checkout_btn" >PROCEED TO CHECKOUT</button>
+                        <Link to="/checkout">
+                            <button className="checkout_btn" >PROCEED TO CHECKOUT</button>
+                        </Link>
                     </div>
                 </div>
             </div>

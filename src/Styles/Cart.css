@@ -34,8 +34,8 @@
 }
 
 .cart_subtotal{
-    height: 300px;
-    width: 300px;
+    height: 500px;
+    width: 500px;
     background-color: #F9F9F9;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .checkout_btn:hover{
-    background-color: #;
+    background-color: #000;
     color: #fff;
 }
 
