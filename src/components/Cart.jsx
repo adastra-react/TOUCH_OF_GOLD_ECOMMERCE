@@ -100,6 +100,7 @@ function Cart({ cart, totalItems, handleUpdateCartQty, handleRemoveFromCart, han
                                 pauseOnHover
                                  />
            </div>
+           <br />
         </div>
     )
 }

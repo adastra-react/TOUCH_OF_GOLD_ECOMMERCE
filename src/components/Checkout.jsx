@@ -1,220 +1,127 @@
-// import React from 'react';
-// import '../Styles/Checkout.css';
-// import Header from './Header';
-// // import Footer from './FooterFeet';
+import React, {Fragment} from 'react';
+import '../Styles/Checkout.css';
+import { Link } from "react-router-dom";
+import Header from './Header';
+// import Footer from './FooterFeet';
 
-// function Checkout({ cart }) {
+function Checkout({ cart }) {
 
-//     console.log(cart)
+    console.log(cart)
 
-//     return (
-//         <div>
-//             <Header/>
-//             <div className="checkout_cont">
-//                 {/* <div className="form_cont">
-//                     <div className="input_div">
-                    
-//                     </div>
-//                 </div>
-//                 <div className="subtotal_cont">
+    return (
+      <div>
+        <Header/>
+        <div className="container">
+          <div className="price">
+            <h1>Awesome, that's {cart.subtotal.formatted_with_symbol} !</h1>
+          </div>
+          <div className="card__container">
+            <div className="card">
+              <div className="row paypal">
+                <div className="left">
+                  <input id="pp" type="radio" name="payment" />
+                  <div className="radio" />
+                  <label htmlFor="pp">Paypal</label>
+                </div>
+                <div className="right">
+                  <img src="http://i68.tinypic.com/2rwoj6s.png" alt="paypal" />
+                </div>
+              </div>
+              <div className="row credit">
+                <div className="left">
+                  <input id="cd" type="radio" name="payment" />
+                  <div className="radio" />
+                  <label htmlFor="cd">Debit/ Credit Card</label>
+                </div>
+                <div className="right">
+                  <img src="http://i66.tinypic.com/5knfq8.png" alt="visa" />
+                  <img src="http://i67.tinypic.com/14y4p1.png" alt="mastercard" />
+                  <img src="http://i63.tinypic.com/1572ot1.png" alt="amex" />
+                  <img src="http://i64.tinypic.com/2i92k4p.png" alt="maestro" />
+                </div>
+              </div>
+              <div className="row cardholder">
+                <div className="info">
+                  <label htmlFor="cardholdername">Name</label>
+                  <input
+                    placeholder="e.g. Richard Bovell"
+                    id="cardholdername"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="row number">
+                <div className="info">
+                  <label htmlFor="cardnumber">Card number</label>
+                  <input
+                    id="cardnumber"
+                    type="text"
+                    pattern="[0-9]{16,19}"
+                    maxLength={19}
+                    placeholder="8888-8888-8888-8888"
+                  />
+                </div>
+              </div>
+              <div className="row details">
+                <div className="left">
+                  <label htmlFor="expiry-date">Expiry</label>
+                  <select id="expiry-date">
+                    <option>MM</option>
+                    <option value={1}>01</option>
+                    <option value={2}>02</option>
+                    <option value={3}>03</option>
+                    <option value={4}>04</option>
+                    <option value={5}>05</option>
+                    <option value={6}>06</option>
+                    <option value={7}>07</option>
+                    <option value={8}>08</option>
+                    <option value={9}>10</option>
+                    <option value={11}>11</option>
+                    <option value={12}>12</option>
+                  </select>
+                  <span>/</span>
+                  <select id="expiry-date">
+                    <option>YYYY</option>
+                    <option value={2016}>2016</option>
+                    <option value={2017}>2017</option>
+                    <option value={2018}>2018</option>
+                    <option value={2019}>2019</option>
+                    <option value={2020}>2020</option>
+                    <option value={2021}>2021</option>
+                    <option value={2022}>2022</option>
+                    <option value={2023}>2023</option>
+                    <option value={2024}>2024</option>
+                    <option value={2025}>2025</option>
+                    <option value={2026}>2026</option>
+                    <option value={2027}>2027</option>
+                    <option value={2028}>2028</option>
+                    <option value={2029}>2029</option>
+                    <option value={2030}>2030</option>
+                  </select>
+                </div>
+                <div className="right">
+                  <label htmlFor="cvv">CVC/CVV</label>
+                  <input type="text" maxLength={4} placeholder={123} />
+                  <span
+                    data-balloon-length="medium"
+                    data-balloon="The 3 or 4-digit number on the back of your card."
+                    data-balloon-pos="up"
+                  >
+                    i
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="button">
+            <button type="submit">
+              <i className="ion-locked" /> Confirm and Pay
+            </button>
+          </div>
+        </div>
 
-//                 </div> */}
-//                 <div className="container">
-//         <div className="py-5 text-center">
-//           {/* <img className="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width={72} height={72} /> */}
-//           <h2>Checkout form</h2>
-//           <p className="lead">Below is a checkout form</p>
-//         </div>
-//         <div className="row">
-//           <div className="col-md-4 order-md-2 mb-4">
-//             <h4 className="d-flex justify-content-between align-items-center mb-3">
-//               <span className="text-muted">Your cart</span>
-//               <span className="badge badge-secondary badge-pill">3</span>
-//             </h4>
-//             <ul className="list-group mb-3">
-//               <li className="list-group-item d-flex justify-content-between lh-condensed">
-//                 <div>
-//                   <h6 className="my-0">Grand Total</h6>
-//                   <small className="text-muted">Brief description</small>
-//                 </div>
-//                 <span className="text-muted">{cart.subtotal.formatted_with_symbol}</span>
-//               </li>
-//               <li className="list-group-item d-flex justify-content-between bg-light">
-//                 <div className="text-success">
-//                   <h6 className="my-0">Promo code</h6>
-//                   <small>Discount</small>
-//                 </div>
-//                 <span className="text-success">-$5</span>
-//               </li>
-//               <li className="list-group-item d-flex justify-content-between">
-//                 <span>Total (USD)</span>
-//                 <strong>{cart.subtotal.formatted_with_symbol}</strong>
-//               </li>
-//             </ul>
-//             <form className="card p-2">
-//               <div className="input-group">
-//                 <input type="text" className="form-control" placeholder="Promo code" />
-//                 <div className="input-group-append">
-//                   <button type="submit" className="btn btn-secondary">Redeem</button>
-//                 </div>
-//               </div>
-//             </form>
-//           </div>
-//           <div className="col-md-8 order-md-1">
-//             <h4 className="mb-3">Billing address</h4>
-//             <form className="needs-validation" noValidate>
-//               <div className="row">
-//                 <div className="col-md-6 mb-3">
-//                   <label htmlFor="firstName">First name</label>
-//                   <input type="text" className="form-control" id="firstName" placeholder defaultValue required />
-//                   <div className="invalid-feedback">
-//                     Valid first name is required.
-//                   </div>
-//                 </div>
-//                 <div className="col-md-6 mb-3">
-//                   <label htmlFor="lastName">Last name</label>
-//                   <input type="text" className="form-control" id="lastName" placeholder defaultValue required />
-//                   <div className="invalid-feedback">
-//                     Valid last name is required.
-//                   </div>
-//                 </div>
-//               </div>
-//               <div className="mb-3">
-//                 <label htmlFor="username">Username</label>
-//                 <div className="input-group">
-//                   <div className="input-group-prepend">
-//                     <span className="input-group-text">@</span>
-//                   </div>
-//                   <input type="text" className="form-control" id="username" placeholder="Username" required />
-//                   <div className="invalid-feedback" style={{width: '100%'}}>
-//                     Your username is required.
-//                   </div>
-//                 </div>
-//               </div>
-//               <div className="mb-3">
-//                 <label htmlFor="email">Email <span className="text-muted">(Optional)</span></label>
-//                 <input type="email" className="form-control" id="email" placeholder="you@example.com" />
-//                 <div className="invalid-feedback">
-//                   Please enter a valid email address for shipping updates.
-//                 </div>
-//               </div>
-//               <div className="mb-3">
-//                 <label htmlFor="address">Address</label>
-//                 <input type="text" className="form-control" id="address" placeholder="1234 Main St" required />
-//                 <div className="invalid-feedback">
-//                   Please enter your shipping address.
-//                 </div>
-//               </div>
-//               <div className="mb-3">
-//                 <label htmlFor="address2">Address 2 <span className="text-muted">(Optional)</span></label>
-//                 <input type="text" className="form-control" id="address2" placeholder="Apartment or suite" />
-//               </div>
-//               <div className="row">
-//                 <div className="col-md-5 mb-3">
-//                   <label htmlFor="country">Country</label>
-//                   <select className="custom-select d-block w-100" id="country" required>
-//                     <option value>Choose...</option>
-//                     <option>United States</option>
-//                   </select>
-//                   <div className="invalid-feedback">
-//                     Please select a valid country.
-//                   </div>
-//                 </div>
-//                 <div className="col-md-4 mb-3">
-//                   <label htmlFor="state">State</label>
-//                   <select className="custom-select d-block w-100" id="state" required>
-//                     <option value>Choose...</option>
-//                     <option>California</option>
-//                   </select>
-//                   <div className="invalid-feedback">
-//                     Please provide a valid state.
-//                   </div>
-//                 </div>
-//                 <div className="col-md-3 mb-3">
-//                   <label htmlFor="zip">Zip</label>
-//                   <input type="text" className="form-control" id="zip" placeholder required />
-//                   <div className="invalid-feedback">
-//                     Zip code required.
-//                   </div>
-//                 </div>
-//               </div>
-//               <hr className="mb-4" />
-//               <div className="custom-control custom-checkbox">
-//                 <input type="checkbox" className="custom-control-input" id="same-address" />
-//                 <label className="custom-control-label" htmlFor="same-address">Shipping address is the same as my billing address</label>
-//               </div>
-//               <div className="custom-control custom-checkbox">
-//                 <input type="checkbox" className="custom-control-input" id="save-info" />
-//                 <label className="custom-control-label" htmlFor="save-info">Save this information for next time</label>
-//               </div>
-//               <hr className="mb-4" />
-//               <h4 className="mb-3">Payment</h4>
-//               <div className="d-block my-3">
-//                 <div className="custom-control custom-radio">
-//                   <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" defaultChecked required />
-//                   <label className="custom-control-label" htmlFor="credit">Credit card</label>
-//                 </div>
-//                 <div className="custom-control custom-radio">
-//                   <input id="debit" name="paymentMethod" type="radio" className="custom-control-input" required />
-//                   <label className="custom-control-label" htmlFor="debit">Debit card</label>
-//                 </div>
-//                 <div className="custom-control custom-radio">
-//                   <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
-//                   <label className="custom-control-label" htmlFor="paypal">PayPal</label>
-//                 </div>
-//               </div>
-//               <div className="row">
-//                 <div className="col-md-6 mb-3">
-//                   <label htmlFor="cc-name">Name on card</label>
-//                   <input type="text" className="form-control" id="cc-name" placeholder required />
-//                   <small className="text-muted">Full name as displayed on card</small>
-//                   <div className="invalid-feedback">
-//                     Name on card is required
-//                   </div>
-//                 </div>
-//                 <div className="col-md-6 mb-3">
-//                   <label htmlFor="cc-number">Credit card number</label>
-//                   <input type="text" className="form-control" id="cc-number" placeholder required />
-//                   <div className="invalid-feedback">
-//                     Credit card number is required
-//                   </div>
-//                 </div>
-//               </div>
-//               <div className="row">
-//                 <div className="col-md-3 mb-3">
-//                   <label htmlFor="cc-expiration">Expiration</label>
-//                   <input type="text" className="form-control" id="cc-expiration" placeholder required />
-//                   <div className="invalid-feedback">
-//                     Expiration date required
-//                   </div>
-//                 </div>
-//                 <div className="col-md-3 mb-3">
-//                   <label htmlFor="cc-cvv">CVV</label>
-//                   <input type="text" className="form-control" id="cc-cvv" placeholder required />
-//                   <div className="invalid-feedback">
-//                     Security code required
-//                   </div>
-//                 </div>
-//               </div>
-//               <hr className="mb-4" />
-//               <button className="btn btn-primary btn-lg btn-block" type="submit">Place Order</button>
-//             </form>
-//           </div>
-//         </div>
-//         {/* <footer className="my-5 pt-5 text-muted text-center text-small">
-//           <p className="mb-1">© 2017-2019 Company Name</p>
-//           <ul className="list-inline">
-//             <li className="list-inline-item"><a href="#">Privacy</a></li>
-//             <li className="list-inline-item"><a href="#">Terms</a></li>
-//             <li className="list-inline-item"><a href="#">Support</a></li>
-//           </ul>
-//         </footer> */}
-//         <br />
-//       </div>
-//             </div>
-//             {/* <Footer/> */}
-//         </div>
-//     )
-// }
+      </div>  
+    )
+}
 
-// export default Checkout
+export default Checkout
