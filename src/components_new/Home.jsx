@@ -1,12 +1,20 @@
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import React, { useEffect, useState } from 'react';
 import '../Styles/Home.css';
 import Header from './Header';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
+import HeroSlider from './HeroSliderOne';
 // import Footer from './FooterFeet';
 import supportImg_1 from '../assets/img/support-1.png';
 import supportImg_2 from '../assets/img/support-2.png';
 import supportImg_3 from '../assets/img/support-3.png';
 import supportImg_4 from '../assets/img/support-4.png';
-import ProductGridListSingle from './ProductGridListSingle';;
+import ProductGridListSingle from './ProductGridListSingle';// requires a loader
+import { Carousel } from 'react-responsive-carousel';
+// import 'swiper/swiper.scss';
+
 
 function Home({ products, handleAddToCart, totalItems }) {
 
@@ -18,14 +26,17 @@ function Home({ products, handleAddToCart, totalItems }) {
             <Header totalItems={totalItems} />
             <div className="home_container">
                 <div className="home_slider">
-                    <div className="home_text_cont">
+                
+               
+                    <HeroSlider/>
+                    {/* <div className="home_text_cont">
                         <h1>
                             SUMMER SALE
                         </h1>
                     </div>
                     <div className="home_img_cont">
                         <h1>IMAGE</h1>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="jumbotron">
                     <div className="jumbo_items_cont">

@@ -5,9 +5,17 @@
 
 .home_slider{
     height: 100vh;
-    background-color: #F0E0FF;
+    /* background-color: red; */
     display: flex;
+    /* background-image: url("../assets/img/girl-holds-fashion-shopping-bag-beauty_1150-13673.jpg"); */
     justify-content: space-around;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-item{
+    background-color: aliceblue;
+    width: 100%;
 }
 
 .home_text_cont{

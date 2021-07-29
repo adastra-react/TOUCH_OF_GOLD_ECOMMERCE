@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CssBaseline } from '@material-ui/core';
+// import { CssBaseline } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components_new/Home';
 import Shop from './components_new/Shop';
@@ -67,6 +67,8 @@ const App = () => {
       setErrorMessage(error.data.error.message);
     }
   };
+
+  console.log(products)
 
   useEffect(() => {
     fetchProducts();
