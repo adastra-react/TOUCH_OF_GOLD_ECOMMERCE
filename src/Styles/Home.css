@@ -1,3 +1,8 @@
+@font-face {
+    font-family: tt_coves_regular;
+    src: url(../assets//fonts/TT\ Hoves\ Regular.otf);
+}
+
 .home{
     /* height: auto; */
     margin: 0 0;
@@ -5,7 +10,7 @@
 
 .home_slider{
     height: 100vh;
-    /* background-color: red; */
+    background-color: #FFEBC9;
     display: flex;
     /* background-image: url("../assets/img/girl-holds-fashion-shopping-bag-beauty_1150-13673.jpg"); */
     justify-content: space-around;
@@ -21,6 +26,11 @@
 .home_text_cont{
     display: grid;
     place-items: center;
+}
+
+.home_text_cont > h1{
+    font-family: tt_coves_regular;
+    font-size: 60px;
 }
 
 .home_img_cont{
@@ -66,8 +76,17 @@
     /* padding-right: 10px !important; */
 }
 
+.jumbo_items > p{
+    font-family: tt_coves_regular;
+}
+
 .jumbo_para_second{
+    /* font-family: tt_coves_regular; */
     font-size: 14px;
+}
+
+.comp_rout_indicator > p{
+    font-family: tt_coves_regular;
 }
 
 .jumbo_items{

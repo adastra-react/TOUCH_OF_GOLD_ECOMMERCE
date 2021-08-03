@@ -11,6 +11,7 @@ import supportImg_1 from '../assets/img/support-1.png';
 import supportImg_2 from '../assets/img/support-2.png';
 import supportImg_3 from '../assets/img/support-3.png';
 import supportImg_4 from '../assets/img/support-4.png';
+import Girl_Two from '../assets/img/girl-2.png';
 import ProductGridListSingle from './ProductGridListSingle';// requires a loader
 import { Carousel } from 'react-responsive-carousel';
 // import 'swiper/swiper.scss';
@@ -26,17 +27,17 @@ function Home({ products, handleAddToCart, totalItems }) {
             <Header totalItems={totalItems} />
             <div className="home_container">
                 <div className="home_slider">
-                
-               
-                    <HeroSlider/>
-                    {/* <div className="home_text_cont">
+                    <div className="home_text_cont">
+                        
                         <h1>
-                            SUMMER SALE
+                            SUMMER OFFER
+                            <p></p>
+                            2021 COLLECTION
                         </h1>
                     </div>
                     <div className="home_img_cont">
-                        <h1>IMAGE</h1>
-                    </div> */}
+                        <img src={Girl_Two} alt="" />
+                    </div>
                 </div>
                 <div className="jumbotron">
                     <div className="jumbo_items_cont">
@@ -53,9 +54,7 @@ function Home({ products, handleAddToCart, totalItems }) {
                     <div className="jumbo_items_cont">
                          <img className="jumbo_img" src={supportImg_2} alt="" />
                          <div className="jumbo_items">
-                            <p className="jumbo_para">
-                            Support 24/7
-                            </p>
+                            <p className="jumbo_para">Support 24/7</p>
                             <p className="jumbo_para jumbo_para_second">100% after sales customer support</p>
                          </div>
                     </div>

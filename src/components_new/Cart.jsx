@@ -50,17 +50,17 @@ function Cart({ cart, totalItems, handleUpdateCartQty, handleRemoveFromCart, han
                     <div className="cart_subtotal">
                         <div className="cart_subtotal_container" >
                             <div>
-                                <h3>Cart Total</h3>
+                                <h3 className="checkout_box_text">Cart Total</h3>
                                 <p>_______________</p>
                             </div>
                             <div>
-                                <p>Total products</p>
-                                <p>{cart.total_items} : {cart.subtotal.formatted_with_symbol}</p>
+                                <p className="checkout_box_text">Total products</p>
+                                <p className="checkout_box_text">{cart.total_items} : {cart.subtotal.formatted_with_symbol}</p>
                                
                             </div>
                             <div>
-                                <h3 className="grand_total" >Grand Total</h3>
-                                <h3 className="grand_total" >{cart.subtotal.formatted_with_symbol}</h3>
+                                <h3 className="grand_total checkout_box_text" >Grand Total</h3>
+                                <h3 className="grand_total checkout_box_text" >{cart.subtotal.formatted_with_symbol}</h3>
                             </div>
                         </div>
                         <Link to="/checkout">

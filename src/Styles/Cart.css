@@ -1,9 +1,18 @@
+@font-face {
+    font-family: tt_coves_regular;
+    src: url(../assets//fonts/TT\ Hoves\ Regular.otf);
+}
+
 .comp_rout_indicator{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 98px;
     background-color: #F7F7F7;
+}
+
+.checkout_box_text{
+    font-family: tt_coves_regular;
 }
 
 .cart_checkout_section{
@@ -29,13 +38,13 @@
 }
 
 .action_btn:hover{
-    background-color: #a749ff;
+    background-color: #B05B3B;
     color: #fff;
 }
 
 .cart_subtotal{
-    height: 300px;
-    width: 300px;
+    height: 500px;
+    width: 500px;
     background-color: #F9F9F9;
 }
 
@@ -63,8 +72,9 @@
     border: none;
     border-radius: 50px;
     transition: ease-in-out 300ms;
-    background-color: #a749ff;
+    background-color: #B05B3B;
     color: #fff;
+    width: 100%;
 }
 
 .checkout_btn:hover{
@@ -78,5 +88,5 @@
 }
 
 .grand_total{
-    color:#a749ff;
+    color:#B05B3B;
 }
