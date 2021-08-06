@@ -1,11 +1,54 @@
 @font-face {
-    font-family: tt_coves_regular;
+    font-family: tt_coves_medium;
     src: url(../assets//fonts/TT\ Hoves\ Regular.otf);
+}
+
+@font-face {
+    font-family: tt_coves_regular;
+    src: url(../assets//fonts/TT\ Hoves\ Medium.otf);
 }
 
 .home{
     /* height: auto; */
     margin: 0 0;
+}
+
+.about_container{
+    padding-top: 40px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.about_card_cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 90vw;
+}
+
+.about_text_cont > h3{
+    font-family: tt_coves_regular;
+    font-size: 27px;
+}
+
+.about_para_text{
+    font-family: tt_coves_regular;
+    font-size: 19px;
+}
+
+.about_header_text{
+    font-family: tt_coves_medium;
+    font-weight: 700;
+    font-size: 18px;
+    color: #666666;
+}
+
+.about_text_cont{
+    text-align: center;
+    width: 800px;
 }
 
 .home_slider{

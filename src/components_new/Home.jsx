@@ -11,13 +11,31 @@ import supportImg_1 from '../assets/img/support-1.png';
 import supportImg_2 from '../assets/img/support-2.png';
 import supportImg_3 from '../assets/img/support-3.png';
 import supportImg_4 from '../assets/img/support-4.png';
+import diamond_1 from '../assets/img/diamond_1.png';
+import diamond_2 from '../assets/img/diamon_2.png';
+import diamond_3 from '../assets/img/diamond_3.png';
 import Girl_Two from '../assets/img/girl-2.png';
 import ProductGridListSingle from './ProductGridListSingle';// requires a loader
+import { makeStyles } from '@material-ui/core/styles';
 import { Carousel } from 'react-responsive-carousel';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 // import 'swiper/swiper.scss';
 
+const useStyles = makeStyles({
+    root: {
+      maxWidth: 345,
+    },
+  });
 
 function Home({ products, handleAddToCart, totalItems }) {
+
+    const classes = useStyles();
 
     // if (!products.length) return <p>Loading...</p>;
     console.log(products)
@@ -37,6 +55,104 @@ function Home({ products, handleAddToCart, totalItems }) {
                     </div>
                     <div className="home_img_cont">
                         <img src={Girl_Two} alt="" />
+                    </div>
+                </div>
+                <br />
+                <div className="about_container">
+                    <div className="about_text_cont">
+                        <p className="about_header_text" >Who Are We</p>
+                        <br />
+                        <h3>Welcome to Touch Of Gold</h3>
+                        <br />
+                        <p className="about_para_text">We aim to carry nothing less than the best quality of the top brands to our valued customers. In doing so, we will remain as one the most respected duty free jewelry store in Jamaica.</p>
+                        <br />
+                    </div>
+                    <div className="about_card_cont">
+                        {/* <div className="about_"> */}
+                        <Card className={classes.root}>
+                            <CardActionArea>
+                                <CardMedia
+                                component="img"
+                                alt="Contemplative Reptile"
+                                height="140"
+                                image={diamond_3}
+                                title="Contemplative Reptile"
+                                />
+                                <CardContent>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    Our Vision
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                We strive to provide phenomenal customer service, great value, and support to our customers. Always and forever.
+                                </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            {/* <CardActions>
+                                <Button size="small" color="primary">
+                                Share
+                                </Button>
+                                <Button size="small" color="primary">
+                                Learn More
+                                </Button>
+                            </CardActions> */}
+                            </Card>
+
+                            <Card className={classes.root}>
+                            <CardActionArea>
+                                <CardMedia
+                                component="img"
+                                alt="Contemplative Reptile"
+                                height="140"
+                                image={diamond_1}
+                                title="Contemplative Reptile"
+                                />
+                                <CardContent>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    Our Mission
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                We have committed ourselves to make each and every customer feel at home and feel like family. We promise that each and every visit will surely be a memorable one.
+                                </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            {/* <CardActions>
+                                <Button size="small" color="primary">
+                                Share
+                                </Button>
+                                <Button size="small" color="primary">
+                                Learn More
+                                </Button>
+                            </CardActions> */}
+                            </Card>
+                            <Card className={classes.root}>
+                            <CardActionArea>
+                                <CardMedia
+                                component="img"
+                                alt="Contemplative Reptile"
+                                height="140"
+                                image={diamond_2}
+                                title="Contemplative Reptile"
+                                />
+                                <CardContent>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    Our Goal
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                Flone provide how all this mistaken idea of denounc pleasure and sing pain was born an will give you a ete account of the system, and expound the actual teangs the eat explorer of the truth.
+                                </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            {/* <CardActions>
+                                <Button size="small" color="primary">
+                                Share
+                                </Button>
+                                <Button size="small" color="primary">
+                                Learn More
+                                </Button>
+                            </CardActions> */}
+                            </Card>
+                            
+                        {/* </div> */}
                     </div>
                 </div>
                 <div className="jumbotron">
